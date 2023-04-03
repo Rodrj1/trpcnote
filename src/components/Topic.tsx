@@ -9,12 +9,12 @@ interface Props {
   onDelete: () => void;
 }
 
-export default function Topic({
+export const Topic = ({
   topic,
   selectedTopic,
   setSelectedTopic,
   onDelete,
-}: Props) {
+}: Props) => {
   return (
     <article
       onClick={(e) => {

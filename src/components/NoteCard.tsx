@@ -8,7 +8,7 @@ interface Props {
   onDelete: () => void;
 }
 
-export default function NoteCard({ note, onDelete }: Props) {
+export const NoteCard = ({ note, onDelete }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

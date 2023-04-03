@@ -1,4 +1,4 @@
-export {default as Header} from "./Header"
-export {default as NoteEditor} from "./NoteEditor"
-export {default as NoteCard} from "./NoteCard";
-export {default as Topic} from "./Topic";
+export { Header } from "./Header";
+export { NoteEditor } from "./NoteEditor";
+export { NoteCard } from "./NoteCard";
+export { Topic } from "./Topic";

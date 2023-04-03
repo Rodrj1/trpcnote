@@ -1,6 +1,6 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 
-export default function Header() {
+export const Header = () => {
   return (
     <header>
       <nav className="flex h-[40px] items-center">

@@ -4,7 +4,7 @@ interface Props {
   onSave: (note: { title: string; content: string }) => void;
 }
 
-export default function NoteEditor({ onSave }: Props) {
+export const NoteEditor = ({ onSave }: Props) => {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
