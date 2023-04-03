@@ -22,7 +22,7 @@ export const Topic = ({
         setSelectedTopic(topic);
       }}
       className={`w-12/12 flex flex-col rounded-lg bg-gray-700 bg-opacity-50 p-2 ${
-        selectedTopic === topic && "bg-slate-600"
+        selectedTopic === topic ? "bg-slate-600" : ""
       }`}
     >
       <h2 className="text-lg text-red-500 my-2">{topic.title}</h2>
