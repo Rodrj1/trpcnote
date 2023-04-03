@@ -1,7 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-// faeb400ef9e0807212624e72addabf5f2d0a5a17 dev
-// a2ecb6466f495f9cf50c001337e7ad5d4f7c40a6 prod
+
 generator client {
     provider = "prisma-client-js"
 }
@@ -56,6 +55,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    topics        Topic[]
 }
 
 model VerificationToken {
@@ -64,4 +64,24 @@ model VerificationToken {
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+model Topic {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    title     String
+    user      User     @relation(fields: [userId], references: [id])
+    userId    String
+    notes     Note[]
+}
+
+model Note {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    title     String
+    content   String   @db.Text
+    topic     Topic    @relation(fields: [topicId], references: [id])
+    topicId   String
 }
