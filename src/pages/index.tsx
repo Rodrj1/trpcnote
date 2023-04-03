@@ -84,7 +84,7 @@ const Content: React.FC = () => {
 
               <ul>
                 {notes?.map((note) => (
-                  <li>
+                  <li key={note.id}>
                     <NoteCard
                       note={note}
                       onDelete={() => void deleteNote.mutate({ id: note.id })}
